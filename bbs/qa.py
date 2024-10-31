@@ -129,9 +129,9 @@ async def qa_write_update(
     file_service: Annotated[QaFileService, Depends()],
     file_data: Annotated[dict, Depends(get_upload_file_data)],
     form: QaContentForm = Depends(),
-    qa_id: int = Form(None),
+    qa_id: int = Form(default=0),
     qa_parent: str = Form(None),
-    qa_related: int = Form(None),
+    qa_related: int = Form(default=0),
 ):
     """
     1:1문의 설정 등록/수정 처리
