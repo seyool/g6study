@@ -508,7 +508,7 @@ class PollForm:
     po_cnt9: int = Form(None)
     po_etc: str = Form(None)
     po_level: int = Form(None)
-    po_point: int = Form(None)
+    po_point: int = Form(default=0)
     po_use: int = Form(None)
 
 
