@@ -110,7 +110,7 @@ async def poll_form_update(
     request: Request,
     db: db_session,
     service: Annotated[PollService, Depends()],
-    po_id: int = Form(None),
+    po_id: int = Form(default=0),
     form_data: PollForm = Depends()
 ):
     """
