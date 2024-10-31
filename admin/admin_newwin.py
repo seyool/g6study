@@ -77,7 +77,7 @@ async def newwin_form_edit(
 async def newwin_form_update(
     db: db_session,
     service: Annotated[NewWinService, Depends(NewWinService.async_init)],
-    nw_id: int = Form(None),
+    nw_id: int = Form(default=0),
     form_data: NewwinForm = Depends()
 ):
     """
