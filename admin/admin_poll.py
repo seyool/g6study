@@ -134,6 +134,8 @@ async def poll_form_update(
     else:
         poll = Poll(**form_data.__dict__)
         db.add(poll)
+        #-- 아래 커밋시 아래 에러가 나오면서 Insert Server error가 됨
+        #-- ValueError: Invalid isoformat string: '2024-10-31 07:10:01'
         db.commit()
 
     # 기존캐시 삭제
